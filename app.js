@@ -27,26 +27,18 @@ var main = function() {
     $('<li>').text(post).prependTo('.posts');
     $('.status-box').val('');
     $('.counter').text('140');
-    $('.post-btn').addClass('disabled'); 
   });
   
   $('.status-box').keyup(function() {
     var postLength = $(this).val().length;
     var charactersLeft = 140 - postLength;
     $('.counter').text(charactersLeft);
-  
-    if(charactersLeft < 0) {
-      $('.post-btn').addClass('disabled'); 
-    }
-    else if(charactersLeft == 140) {
-      $('.post-btn').addClass('disabled');
-    }
-    else {
-      $('.post-btn').removeClass('disabled');
-    }
   });
-  
-  //$('.post-btn').addClass('disabled');
+
+  $('.remove-btn').click(function() {
+    var list = document.getElementById(".posts");   // Get the <ul> element with id="myList"
+    list.removeChild(list.childNodes[0]);           // Remove <ul>'s first child node (index 0)
+  });
 };
 
 
