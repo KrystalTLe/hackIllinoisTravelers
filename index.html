@@ -77,14 +77,13 @@
           <li><a href="no_javascript.html" id="budget-link">Budget</a></li>
           <li><a href="no_javascript.html" id="events-link">Events</a></li>
           <li><a href="no_javascript.html" id="Transportation-link">Transportation</a></li>
-
         </ul>
       </div>
     </div>
-    <div id="container-fluid">
+    <div class="container-fluid">
       <div id="body">
         
-        <!-- Main Jumbotron -->
+        <!-- Home Jumbotron -->
         <div class="jumbotron" id="home">
           <div class="icon-menu">
             <i class="fa fa-bars"></i>
@@ -101,6 +100,7 @@
           <div id = "main">
             <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
           </div>
+          
           <form class="form-horizontal" role="form">
             <div class="form-group">
               <label class="control-label col-sm-2" for="summary">Event Name:</label>
@@ -158,64 +158,62 @@
             <i class="fa fa-bars"></i>
             Menu
           </div>
-            <form>
-              Departure location:<br>
-              <input type="text" id='departureLocation'  name="departureLocation">
-              <br>
-              Time of Departure:<br>
-              <input type="datetime-local" id='departureTime' name="departureTime">
-              <br>
-              Arrival Location:<br>
-              <input type="text" id='arrivalLocation' name="arrivalLocation">
-              <br>
-              Time of Arrival:<br>
-              <input type="datetime-local" id='arrivalTime' name="arrivalTime">
-              <input type="button" id='flight_submit' value="Add to Calendar">
-            </form>
-          </div>
+          <form>
+            Departure location:<br>
+            <input type="text" id='departureLocation'  name="departureLocation">
+            <br>
+            Time of Departure:<br>
+            <input type="datetime-local" id='departureTime' name="departureTime">
+            <br>
+            Arrival Location:<br>
+            <input type="text" id='arrivalLocation' name="arrivalLocation">
+            <br>
+            Time of Arrival:<br>
+            <input type="datetime-local" id='arrivalTime' name="arrivalTime">
+            <input type="button" id='flight_submit' value="Add to Calendar">
+          </form>
+        </div>
         <!-- Transportation Jumbotron -->
         <div class="jumbotron" id="Transportation">
           <div class="icon-menu">
             <i class="fa fa-bars"></i>
             Menu
           </div>
-            <form id="TransportationChoice">>
-              Select Mode of Transportation
-              <select> 
-                <option value="Car">Car</option>
-                <option value="Bus">Bus</option>
-                <option value="Train">Train</option>
-              </select>
-              <br>
-              <br>
-              Enter Departure Time and Date<br>
-              <input type="datetime-local" id="TransDepartureTime" name="TransDeparture">
-              <br>
-              <br>
-              Enter Arrival Time and Date<br>
-              <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
-              <input type="button" id='transportation_submit' value="Add to Calendar">
-            </form>
+          <form id="TransportationChoice">>
+            Select Mode of Transportation
+            <select>
+              <option value="Car">Car</option>
+              <option value="Bus">Bus</option>
+              <option value="Train">Train</option>
+            </select>
+            <br>
+            <br>
+            Enter Departure Time and Date<br>
+            <input type="datetime-local" id="TransDepartureTime" name="TransDeparture">
+            <br>
+            <br>
+            Enter Arrival Time and Date<br>
+            <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
+            <input type="button" id='transportation_submit' value="Add to Calendar">
+          </form>
         </div>
-
-
         <!-- Accomodation Jumbotron -->
         <div class="jumbotron" id="accomodation">
           <div class="icon-menu">
             <i class="fa fa-bars"></i>
             Menu
           </div>
-            <form>
-              Location:<br>
-              <input type="text" id="AccomodationLocation" name="AccomodationLocation">
-              <br>
-              Duration of stay:<br>
-              Start:
-              <input type="datetime-local" id="accomStart" name="accomStart">
-              End:
-              <input type="datetime-local" id="accomEnd" name="accomEnd">
-              <input type='button' id='accom_submit' value='Add to Calendar'>
-            </form>
+          <form>
+            Location:<br>
+            <input type="text" id="AccomodationLocation" name="AccomodationLocation">
+            <br>
+            Duration of stay:<br>
+            Start:
+            <input type="datetime-local" id="accomStart" name="accomStart">
+            End:
+            <input type="datetime-local" id="accomEnd" name="accomEnd">
+            <input type='button' id='accom_submit' value='Add to Calendar'>
+          </form>
         </div>
         <!-- events Jumbotron -->
         <div class="jumbotron" id="events">
@@ -248,34 +246,44 @@
                 </form>
                 <!-- Money input -->
                 <div class="input-group">
-                Amount:
+                  Amount:
                   <label class="input-group-addon"></label>
                   <input type="text" class="form-control" id="price" placeholder="Amount">
                   <div class="input-group-addon"></div>
                 </div>
                 <div>
-                Item Description:
-                <br>
+                  Item Description:
+                  <br>
                   <textarea name="Text1" cols="40" rows="5" id="Description">
-
                   </textarea>
                 </div>
                 <button type="button" class="btn btn-primary submit">Add Item</button>
               </fieldset>
             </form>
             <!-- Budget List -->
-            <ul class="list-group" id= "posts-expenditure">
-              <li>test</li>
-              <li>test2</li>
-            </ul>
+            <div class="row">
+              <div class="col-md-4">
+                <ul class="list-group" id= "posts-expenditure">
+                  <li>test</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-group" id= "posts-expenditure">
+                  <li>test2</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-group" id= "posts-expenditure">
+                  <li>test3</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div id="footer">
-        <div class="foot">
+      <div class="foot" id="footer">
           <!-- copyright -->
           &copy; Hack Illinois 2016
-        </div>
       </div>
     </div>
   </body>
