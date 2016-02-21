@@ -97,3 +97,7 @@ body {
   word-wrap: break-word;
   min-height: 42px;
 }
+
+.Tabs-info {
+  color: #fff;
+}
