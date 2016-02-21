@@ -242,17 +242,25 @@
                 <!-- Text input-->
                 <form class="form-inline">
                   <div class="form-group">
-                    <label for="Budget">Expenditure: </label>
+                    <label for="Budget">Item: </label>
                     <input type="text" class="form-control" id="expenditure">
                   </div>
                 </form>
                 <!-- Money input -->
                 <div class="input-group">
-                  <label class="input-group-addon">$</label>
+                Amount:
+                  <label class="input-group-addon"></label>
                   <input type="text" class="form-control" id="price" placeholder="Amount">
-                  <div class="input-group-addon">.00</div>
+                  <div class="input-group-addon"></div>
                 </div>
-                <button type="button" class="btn btn-primary submit">Price</button>
+                <div>
+                Item Description:
+                <br>
+                  <textarea name="Text1" cols="40" rows="5" id="Description">
+
+                  </textarea>
+                </div>
+                <button type="button" class="btn btn-primary submit">Add Item</button>
               </fieldset>
             </form>
             <!-- Budget List -->

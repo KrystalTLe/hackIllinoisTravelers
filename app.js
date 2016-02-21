@@ -140,11 +140,14 @@ var main = function() {
   $('.submit').click(function() {
     var expenditure = $('#expenditure').val();
     var price = $('#price').val();
+    var Description = $('#Description').val();
     console.log(expenditure);
     console.log(price);
-    $('<li class="list-group-item">').text(expenditure+" : "+price).prependTo('#posts-expenditure');
+    console.log(Description);
+    $('<li class="list-group-item">').text(expenditure+" : "+price+" : "+Description).prependTo('#posts-expenditure');
     $('#expenditure').val('');
     $('#price').val('');
+    $('Description').val('');
   });
 
 };
