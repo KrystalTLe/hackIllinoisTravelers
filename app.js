@@ -136,7 +136,7 @@ var main = function() {
     });
   });
 
-   /* updating budget table*/
+   /* updating budget list*/
   $('.submit').click(function() {
     var expenditure = $('#expenditure').val();
     var price = $('#price').val();
@@ -144,9 +144,7 @@ var main = function() {
     console.log(expenditure);
     console.log(price);
     console.log(Description);
-    $('#posts-expenditure').append('<tr><td>'+expenditure+
-        '</td><td>'+price+'</td><td>'+Description+
-        '</td></tr>');
+    $('<li class="list-group-item">').text(expenditure+" : "+price+" : "+Description).prependTo('#posts-expenditure');
     $('#expenditure').val('');
     $('#price').val('');
     $('Description').val('');
