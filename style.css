@@ -25,6 +25,13 @@ body {
           background-size: cover;
 }
 
+#container-fluid {
+}
+#body {
+}
+
+
+
 .menu ul {
   border-top: 1px solid #636366;
   list-style: none;
@@ -74,11 +81,6 @@ body {
   margin-bottom: 20px;
 }
 
-.counter {
-  display: inline;
-  margin: auto;
-}
-
 .posts {
   clear: both;
   list-style: none;
@@ -86,7 +88,7 @@ body {
   width: 50%;
 }
 
-.posts li {
+#posts-expenditure li {
   background-color: #fff;
   border: 1px solid #d8d8d8;
   padding-top: 10px;
@@ -100,4 +102,11 @@ body {
 
 .Tabs-info {
   color: #fff;
+}
+
+.foot {
+  color: #000;
+  background-color: #fff;
+  font-size:20px;
+  position:fixed;
 }

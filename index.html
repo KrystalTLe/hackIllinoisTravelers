@@ -1,72 +1,67 @@
 <html>
-    <head>
-        <script src="https://apis.google.com/js/client.js"></script>
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+  <head>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
     <link href='style.css' rel='stylesheet'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="app.js"></script>
-        <script type="text/javascript">
-// Your Client ID can be retrieved from your project in the Google
-// Developer Console, https://console.developers.google.com
-var CLIENT_ID = '152500545333-lqv4laenr9uai0nj9ftqnn8i6rhuj4tl.apps.googleusercontent.com';
-var SCOPES = ["https://www.googleapis.com/auth/calendar"];
-
-/**
- * Check if current user has authorized this application.
- */
-function checkAuth() {
+    <script type="text/javascript">
+    // Your Client ID can be retrieved from your project in the Google
+    // Developer Console, https://console.developers.google.com
+    var CLIENT_ID = '152500545333-lqv4laenr9uai0nj9ftqnn8i6rhuj4tl.apps.googleusercontent.com';
+    var SCOPES = ["https://www.googleapis.com/auth/calendar"];
+    /**
+    * Check if current user has authorized this application.
+    */
+    function checkAuth() {
     gapi.auth.authorize(
-            {
-                'client_id': CLIENT_ID,
-                'scope': SCOPES.join(' '),
-                'immediate': true
-            }, handleAuthResult);
-}
-
-/**
- * Handle response from authorization server.
- *
- * @param {Object} authResult Authorization result.
- */
-function handleAuthResult(authResult) {
+    {
+    'client_id': CLIENT_ID,
+    'scope': SCOPES.join(' '),
+    'immediate': true
+    }, handleAuthResult);
+    }
+    /**
+    * Handle response from authorization server.
+    *
+    * @param {Object} authResult Authorization result.
+    */
+    function handleAuthResult(authResult) {
     var authorizeDiv = document.getElementById('authorize-div');
     if (authResult && !authResult.error) {
-        // Hide auth UI, then load client library.
-        authorizeDiv.style.display = 'none';
-        loadCalendarApi();
+    // Hide auth UI, then load client library.
+    authorizeDiv.style.display = 'none';
+    loadCalendarApi();
     } else {
-        // Show auth UI, allowing the user to initiate authorization by
-        // clicking authorize button.
-        authorizeDiv.style.display = 'inline';
+    // Show auth UI, allowing the user to initiate authorization by
+    // clicking authorize button.
+    authorizeDiv.style.display = 'inline';
     }
-}
-
-/**
- * Initiate auth flow in response to user clicking authorize button.
- *
- * @param {Event} event Button click event.
- */
-function handleAuthClick(event) {
+    }
+    /**
+    * Initiate auth flow in response to user clicking authorize button.
+    *
+    * @param {Event} event Button click event.
+    */
+    function handleAuthClick(event) {
     gapi.auth.authorize(
-            {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-            handleAuthResult);
+    {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+    handleAuthResult);
     return false;
-}
-
-/**
- * Load Google Calendar client library. List upcoming events
- * once client library is loaded.
- */
-function loadCalendarApi() {
+    }
+    /**
+    * Load Google Calendar client library. List upcoming events
+    * once client library is loaded.
+    */
+    function loadCalendarApi() {
     gapi.client.load('calendar', 'v3');
-}
-
-        </script>
-        <script src="https://apis.google.com/js/client.js?onload=checkAuth">
-        </script>
-    </head>
-    <body>
+    }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+  </head>
+  <body>
     <div class="menu">
       
       <!-- Menu icon -->
@@ -76,115 +71,180 @@ function loadCalendarApi() {
       <!-- Menu -->
       <div class="tabs">
         <ul class ="tab-links">
-           <details>
-              <summary class = "flightDetails">
-              <li><a> Flight Details</a></li>
-              </summary>
-                  <div id="modal1" class="Tabs-info">
-                    <form>
-                      Departure location:<br>
-                      <input type="text" id='departureLocation'  name="departureLocation">
-                      <br>
-                      Time of Departure:<br>
-                      <input type="datetime-local" id='departureTime' name="departureTime">
-                      <br>
-                      Arrival Location:<br>
-                      <input type="text" id='arrivalLocation' name="arrivalLocation">
-                      <br>
-                      Time of Arrival:<br>
-                      <input type="datetime-local" id='arrivalTime' name="arrivalTime"> 
-                      <input type="button" id='flight_submit' value="Add to Calendar">
-                    </form>
-                  </div>
-            </details>
-            <details>
-              <summary class = "AccomodationDetails">
-              <li><a> Accomodation</a></li>
-              </summary>
-                <div id="modal2" class="Tabs-info">
-                  <form>
-                    Location:<br>
-                    <input type="text" id="AccomodationLocation" name="AccomodationLocation">
-                    <br>
-                    Duration of stay:<br>
-                    Start:
-                    <input type="datetime-local" id="accomStart" name="accomStart">
-                    End:
-                    <input type="datetime-local" id="accomEnd" name="accomEnd">
-                    <input type='button' id='accom_submit' value='Add to Calendar'>
-                  </form>
-                </div>
-              </details>
-          <li><a href="#">Places of Interest</a></li>
-          <li><a href="budget.html">Budget</a></li>
+          <li><a href="no_javascript.html" id="home-link">Home</a></li>
+          <li><a href="no_javascript.html" id="flightDetails-link"> Flight Details</a></li>
+          <li><a href="no_javascript.html" id="accomodation-link"> Accomodation</a></li>
+          <li><a href="no_javascript.html" id="budget-link">Budget</a></li>
+          <li><a href="no_javascript.html" id="events-link">Events</a></li>
         </ul>
       </div>
     </div>
-    <!-- Main body -->
-    <div class="jumbotron">
-      <div class="icon-menu">
-        <i class="fa fa-bars"></i>
-        Menu
-      </div>
-        <div id="authorize-div" style="display: none">
+    <div id="container-fluid">
+      <div id="body">
+        
+        <!-- Main Jumbotron -->
+        <div class="jumbotron" id="home">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+          
+          <div id="authorize-div" style="display: none">
             <span>Authorize access to Google Calendar API</span>
             <!--Button for the user to click to initiate auth sequence -->
             <button id="authorize-button" onclick="handleAuthClick(event)">
-                Authorize
+            Authorize
             </button>
+          </div>
+          <div id = "main">
+            <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="summary">Event Name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="summary" placeholder="Enter event name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="description">Description:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="description" placeholder="Enter a description">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="start">Start:</label>
+              <div class="col-sm-10">
+                <input type="datetime-local" class="form-control" id="start">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="end">End:</label>
+              <div class="col-sm-10">
+                <input type="datetime-local" class="form-control" id="end">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" id = "submit">Submit</button>
+              </div>
+            </div>
+          </form>
+          <form class="form-horizontal" role='form'>
+            <div class='form-group'>
+              <label class='control-label col-sm-2' for='cal_start'> Calendar Start: </label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="cal_start">
+              </div>
+            </div>
+            <div class='form-group'>
+              <label class='control-label col-sm-2' for='cal_end'> Calendar End: </label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="cal_end">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" id = "cal_submit">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
-      <div id = "main">
-          <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <!-- flightDetails Jumbotron -->
+        <div class="jumbotron" id="flightDetails">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+          <div id="modal1" class="Tabs-info">
+            <form>
+              Departure location:<br>
+              <input type="text" id='departureLocation'  name="departureLocation">
+              <br>
+              Time of Departure:<br>
+              <input type="datetime-local" id='departureTime' name="departureTime">
+              <br>
+              Arrival Location:<br>
+              <input type="text" id='arrivalLocation' name="arrivalLocation">
+              <br>
+              Time of Arrival:<br>
+              <input type="datetime-local" id='arrivalTime' name="arrivalTime">
+              <input type="button" id='flight_submit' value="Add to Calendar">
+            </form>
+          </div>
+        </div>
+        <!-- Accomodation Jumbotron -->
+        <div class="jumbotron" id="accomodation">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+          <div id="modal2" class="Tabs-info">
+            <form>
+              Location:<br>
+              <input type="text" id="AccomodationLocation" name="AccomodationLocation">
+              <br>
+              Duration of stay:<br>
+              Start:
+              <input type="datetime-local" id="accomStart" name="accomStart">
+              End:
+              <input type="datetime-local" id="accomEnd" name="accomEnd">
+              <input type='button' id='accom_submit' value='Add to Calendar'>
+            </form>
+          </div>
+        </div>
+        <!-- events Jumbotron -->
+        <div class="jumbotron" id="events">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+          <label class="file">
+            <input type="file" id="file">
+            <span class="file-custom"></span>
+          </label>
+        </div>
+        <!-- Budget Jumbotron -->
+        <div class="jumbotron" id="budget">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+          <div class="container">
+            <form class="form-horizontal">
+              <!-- Form -->
+              <fieldset>
+                <legend>Budget</legend>
+                <!-- Text input-->
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="Budget">Expenditure: </label>
+                    <input type="text" class="form-control" id="expenditure">
+                  </div>
+                </form>
+                <!-- Money input -->
+                <div class="input-group">
+                  <label class="input-group-addon">$</label>
+                  <input type="text" class="form-control" id="price" placeholder="Amount">
+                  <div class="input-group-addon">.00</div>
+                </div>
+                <button type="button" class="btn btn-primary submit">Price</button>
+              </fieldset>
+            </form>
+            <!-- Budget List -->
+            <ul class="list-group" id= "posts-expenditure">
+              <li>test</li>
+              <li>test2</li>
+            </ul>
+          </div>
+        </div>
       </div>
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="summary">Event Name:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="summary" placeholder="Enter event name">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="description">Description:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="description" placeholder="Enter a description">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="start">Start:</label>
-                <div class="col-sm-10"> 
-                    <input type="datetime-local" class="form-control" id="start">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="end">End:</label>
-                <div class="col-sm-10"> 
-                    <input type="datetime-local" class="form-control" id="end">
-                </div>
-            </div>
-            <div class="form-group"> 
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" class="btn btn-default" id = "submit">Submit</button>
-                </div>
-            </div>
-        </form>
-        <form class="form-horizontal" role='form'>
-            <div class='form-group'>
-                <label class='control-label col-sm-2' for='cal_start'> Calendar Start: </label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" id="cal_start">
-                </div>
-            </div>
-            <div class='form-group'>
-                <label class='control-label col-sm-2' for='cal_end'> Calendar End: </label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" id="cal_end">
-                </div>
-            </div>
-            <div class="form-group"> 
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" class="btn btn-default" id = "cal_submit">Submit</button>
-                </div>
-            </div>
-        </form>
-    </body>
+      <div id="footer">
+        <div class="foot">
+          <!-- copyright -->
+          &copy; Hack Illinois 2016
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

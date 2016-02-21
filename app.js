@@ -49,7 +49,12 @@ function handleAuthClick(event) {
 
 
 var main = function() {
-  /* Push the body and the nav over by 285px over */
+  $('.jumbotron').siblings().hide();
+  $('#header').show();
+  $('.menu').show();
+  $('#home').show();
+  $('.foot').show();
+  /* MENU BAR: Push the body and the nav over by 285px over */
   $('.icon-menu').click(function() {
     $('.menu').animate({
       left: "0px"
@@ -60,7 +65,7 @@ var main = function() {
     }, 200);
   });
 
-  /* Then push them back */
+  /* MENU BAR: Then push them back */
   $('.icon-close').click(function() {
     $('.menu').animate({
       left: "-285px"
@@ -71,18 +76,65 @@ var main = function() {
     }, 200);
   });
 
-
-  $('.post-btn').click(function() {
-    var post = $('.status-box').val();
-    $('<li>').text(post).prependTo('.posts');
-    console.log(post);
-    $('.status-box').val('');
+  /* dynamically updating jumbotron - home*/
+  $(document).ready(function() {
+    $('#home-link').click(function() {
+        var currentView = $('.jumbotron').attr('id');
+        $('.jumbotron').hide();
+        $('#home').show();
+        return false; // cancel the event
+    });
   });
-  
-  $('.status-box').keyup(function() {
-    var postLength = $(this).val().length;
-    var charactersLeft = 140 - postLength;
-    $('.counter').text(charactersLeft);
+
+  /* dynamically updating jumbotron - flightDetails*/
+  $(document).ready(function() {
+    $('#flightDetails-link').click(function() {
+        var currentView = $('.jumbotron').attr('id');
+        $('.jumbotron').hide();
+        $('#flightDetails').show();
+        return false; // cancel the event
+    });
+  });
+
+  /* dynamically updating jumbotron - accomodation*/
+  $(document).ready(function() {
+    $('#accomodation-link').click(function() {
+        var currentView = $('.jumbotron').attr('id');
+        $('.jumbotron').hide();
+        $('#accomodation').show();
+        return false; // cancel the event
+    });
+  });
+
+  /* dynamically updating jumbotron - events*/
+  $(document).ready(function() {
+    $('#events-link').click(function() {
+        var currentView = $('.jumbotron').attr('id');
+        $('.jumbotron').hide();
+        $('#events').show();
+        return false; // cancel the event
+    });
+  });
+
+  /* dynamically updating jumbotron - budget*/
+  $(document).ready(function() {
+    $('#budget-link').click(function() {
+        var currentView = $('.jumbotron').attr('id');
+        $('.jumbotron').hide();
+        $('#budget').show();
+        return false; // cancel the event
+    });
+  });
+
+   /* updating budget list*/
+  $('.submit').click(function() {
+    var expenditure = $('#expenditure').val();
+    var price = $('#price').val();
+    console.log(expenditure);
+    console.log(price);
+    $('<li class="list-group-item">').text(expenditure+" : "+price).prependTo('#posts-expenditure');
+    $('#expenditure').val('');
+    $('#price').val('');
   });
 };
 
