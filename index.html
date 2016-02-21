@@ -1,10 +1,13 @@
 <html>
   <head>
+    <!-- google api -->
     <script src="https://apis.google.com/js/client.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href='style.css' rel='stylesheet'>
+    <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="app.js"></script>
     <script type="text/javascript">
@@ -98,46 +101,45 @@
             Authorize
             </button>
           </div>
-
           <div class='row'>
-              <div class='col-sm-6'>
-                  <div id = "main">
-                      <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <div class='col-sm-6'>
+              <div id = "main">
+                <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class='col-sm-6'>
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="summary">Event Name:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="summary" placeholder="Enter event name">
                   </div>
-              </div>
-              <div class='col-sm-6'>
-                  <form class="form-horizontal" role="form">
-                      <div class="form-group">
-                          <label class="control-label col-sm-2" for="summary">Event Name:</label>
-                          <div class="col-sm-5">
-                              <input type="text" class="form-control" id="summary" placeholder="Enter event name">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label class="control-label col-sm-2" for="description">Description:</label>
-                          <div class="col-sm-5">
-                              <input type="text" class="form-control" id="description" placeholder="Enter a description">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label class="control-label col-sm-2" for="start">Start:</label>
-                          <div class="col-sm-5">
-                              <input type="datetime-local" class="form-control" id="start">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label class="control-label col-sm-2" for="end">End:</label>
-                          <div class="col-sm-5">
-                              <input type="datetime-local" class="form-control" id="end">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <div class="col-sm-offset-2 col-sm-10">
-                              <button type="button" class="btn btn-default" id = "submit">Submit</button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="description">Description:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="description" placeholder="Enter a description">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="start">Start:</label>
+                  <div class="col-sm-5">
+                    <input type="datetime-local" class="form-control" id="start">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="end">End:</label>
+                  <div class="col-sm-5">
+                    <input type="datetime-local" class="form-control" id="end">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" id = "submit">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
         <!-- flightDetails Jumbotron -->
@@ -167,23 +169,23 @@
             <i class="fa fa-bars"></i>
             Menu
           </div>
-            <form id="TransportationChoice">
-              Select Mode of Transportation
-              <select> 
-                <option value="Car">Car</option>
-                <option value="Bus">Bus</option>
-                <option value="Train">Train</option>
-              </select>
-              <br>
-              <br>
-              Enter Departure Time and Date<br>
-              <input type="datetime-local" id="TransDepartureTime" name="TransDeparture">
-              <br>
-              <br>
-              Enter Arrival Time and Date<br>
-              <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
-              <input type="button" id='transportation_submit' value="Add to Calendar">
-            </form>
+          <form id="TransportationChoice">
+            Select Mode of Transportation
+            <select>
+              <option value="Car">Car</option>
+              <option value="Bus">Bus</option>
+              <option value="Train">Train</option>
+            </select>
+            <br>
+            <br>
+            Enter Departure Time and Date<br>
+            <input type="datetime-local" id="TransDepartureTime" name="TransDeparture">
+            <br>
+            <br>
+            Enter Arrival Time and Date<br>
+            <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
+            <input type="button" id='transportation_submit' value="Add to Calendar">
+          </form>
         </div>
         <!-- Accomodation Jumbotron -->
         <div class="jumbotron" id="accomodation">
@@ -191,28 +193,28 @@
             <i class="fa fa-bars"></i>
             Menu
           </div>
-            <form>
-              Location:<br>
-              <input type="text" id="AccomodationLocation" name="AccomodationLocation">
-              <br><br>
-              Duration of stay:<br>
-              Start:
-              <input type="datetime-local" id="accomStart" name="accomStart">
-              <br><br>End:
-              <input type="datetime-local" id="accomEnd" name="accomEnd">
-              <input type='button' id='accom_submit' value='Add to Calendar'>
-            </form>
+          <form>
+            Location:<br>
+            <input type="text" id="AccomodationLocation" name="AccomodationLocation">
+            <br><br>
+            Duration of stay:<br>
+            Start:
+            <input type="datetime-local" id="accomStart" name="accomStart">
+            <br><br>End:
+            <input type="datetime-local" id="accomEnd" name="accomEnd">
+            <input type='button' id='accom_submit' value='Add to Calendar'>
+          </form>
         </div>
         <!-- events Jumbotron -->
         <div class="jumbotron" id="events">
-            <div class="icon-menu">
-                <i class="fa fa-bars"></i>
-                Menu
-            </div>
-            <label class="file">
-                <input type="file" id="file">
-                <span class="file-custom"></span>
-            </label>
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+          <label class="file">
+            <input type="file" id="file">
+            <span class="file-custom"></span>
+          </label>
         </div>
         <!-- Budget Jumbotron -->
         <div class="jumbotron" id="budget">
@@ -226,54 +228,49 @@
               <fieldset>
                 <legend>Budget</legend>
                 <!-- Text input-->
-                <form class="form-inline">
-                  <div class="form-group">
-                    <label for="Budget">Item: </label>
-                    <input type="text" class="form-control" id="expenditure">
-                  </div>
-                </form>
+                <div class="form-group">
+                  <label for="Item">Item: </label>
+                  <input type="text" class="form-control" id="expenditure" placeholder="Item">
+                </div>
                 <!-- Money input -->
-                <div class="input-group">
-                  Amount:
-                  <label class="input-group-addon"></label>
-                  <input type="text" class="form-control" id="price" placeholder="Amount">
-                  <div class="input-group-addon"></div>
-                </div>
-                <div>
-                  Item Description:
-                  <br>
-                  <textarea name="Text1" cols="40" rows="5" id="Description">
-                  </textarea>
-                </div>
-                <button type="button" class="btn btn-primary submit">Add Item</button>
-              </fieldset>
-            </form>
-            <!-- Budget List -->
-            <div class="row">
-              <div class="col-md-4">
-                <ul class="list-group" id= "posts-expenditure">
-                  <li>test</li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-group" id= "posts-expenditure">
-                  <li>test2</li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-group" id= "posts-expenditure">
-                  <li>test3</li>
-                </ul>
-              </div>
+                <div class="row">
+                  <div class="input-group">
+                    <label for="Amount">Amount:</label>
+                    <input type="text" class="form-control" id="price" placeholder="Amount">
+                  </div>
+                  <div>
+                    <label for="Description">Item Description:</label>
+                    <br>
+                    <textarea name="Text1" class="col-md-4" id="Description" placeholder="Description"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-primary submit">Add</button>
+                </fieldset>
+              </form>
+              <!-- Budget List -->
+              <table class="table panel-body" id="posts-expenditure">
+                <tr>
+                  <th>Item</th>
+                  <th>Amount</th>
+                  <th>Description</th>
+                </tr>
+                <tbody>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th id="total" colspan="3">Total :</th>
+                  <td>200</td>
+                </tr>
+                </tfoot>
+              </table>
             </div>
           </div>
         </div>
       </div>
       <div id="footer">
-          <div class="foot">
-              <!-- copyright -->
-              &copy; Hack Illinois 2016
-          </div>
+        <div class="foot">
+          <!-- copyright -->
+          &copy; Hack Illinois 2016
+        </div>
       </div>
     </div>
   </body>
