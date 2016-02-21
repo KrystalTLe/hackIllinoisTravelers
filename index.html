@@ -76,6 +76,8 @@
           <li><a href="no_javascript.html" id="accomodation-link"> Accomodation</a></li>
           <li><a href="no_javascript.html" id="budget-link">Budget</a></li>
           <li><a href="no_javascript.html" id="events-link">Events</a></li>
+          <li><a href="no_javascript.html" id="Transportation-link">Transportation</a></li>
+
         </ul>
       </div>
     </div>
@@ -156,7 +158,6 @@
             <i class="fa fa-bars"></i>
             Menu
           </div>
-          <div id="modal1" class="Tabs-info">
             <form>
               Departure location:<br>
               <input type="text" id='departureLocation'  name="departureLocation">
@@ -172,14 +173,38 @@
               <input type="button" id='flight_submit' value="Add to Calendar">
             </form>
           </div>
+        <!-- Transportation Jumbotron -->
+        <div class="jumbotron" id="Transportation">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+            <form id="TransportationChoice">>
+              Select Mode of Transportation
+              <select> 
+                <option value="Car">Car</option>
+                <option value="Bus">Bus</option>
+                <option value="Train">Train</option>
+              </select>
+              <br>
+              <br>
+              Enter Departure Time and Date<br>
+              <input type="datetime-local" id="TransDepartureTime" name="TransDeparture">
+              <br>
+              <br>
+              Enter Arrival Time and Date<br>
+              <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
+              <input type="button" id='transportation_submit' value="Add to Calendar">
+            </form>
         </div>
+
+
         <!-- Accomodation Jumbotron -->
         <div class="jumbotron" id="accomodation">
           <div class="icon-menu">
             <i class="fa fa-bars"></i>
             Menu
           </div>
-          <div id="modal2" class="Tabs-info">
             <form>
               Location:<br>
               <input type="text" id="AccomodationLocation" name="AccomodationLocation">
@@ -191,7 +216,6 @@
               <input type="datetime-local" id="accomEnd" name="accomEnd">
               <input type='button' id='accom_submit' value='Add to Calendar'>
             </form>
-          </div>
         </div>
         <!-- events Jumbotron -->
         <div class="jumbotron" id="events">
