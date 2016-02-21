@@ -152,21 +152,39 @@
             <i class="fa fa-bars"></i>
             Menu
           </div>
-            <form>
-              Departure location:<br>
-              <input type="text" id='departureLocation'  name="departureLocation">
-              <br>
-              Time of Departure:<br>
-              <input type="datetime-local" id='departureTime' name="departureTime">
-              <br>
-              Arrival Location:<br>
-              <input type="text" id='arrivalLocation' name="arrivalLocation">
-              <br>
-              Time of Arrival:<br>
-              <input type="datetime-local" id='arrivalTime' name="arrivalTime">
-              <input type="button" id='flight_submit' value="Add to Calendar">
+          <form class="form-horizontal" role='form'>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='departureLocation'>Departure location:</label>
+                  <div class='col-sm-5'>
+                      <input type="text" class='form-control' id='departureLocation'  name="departureLocation">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='departuretime'>Time of departure:</label>
+                  <div class='col-sm-5'>
+                      <input type="datetime-local" class='form-control' id='departureTime' name="departureTime">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='arrivalLocation'>Arrival location:</label>
+                  <div class='col-sm-5'>
+                      <input type="text" class='form-control' id='arrivalLocation' name="arrivalLocation">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='arrivalTime'>Time of arrival:</label>
+                  <div class='col-sm-5'>
+                      <input type="datetime-local" class='form-control' id='arrivalTime' name="arrivalTime">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <div class='col-sm-offset-2 col-sm-10'>
+                      <button type="button" id='flight_submit' value="Add to Calendar">Add to Calendar</button>
+                  </div>
+              </div>
             </form>
           </div>
+
         <!-- Transportation Jumbotron -->
         <div class="jumbotron" id="Transportation">
           <div class="icon-menu">
@@ -175,11 +193,16 @@
           </div>
             <form id="TransportationChoice">
               Select Mode of Transportation
-              <select> 
+              <select id='TransMode'>
                 <option value="Car">Car</option>
                 <option value="Bus">Bus</option>
                 <option value="Train">Train</option>
               </select>
+              Departure location:<br>
+              <input type="text" id='TransDepart'  name="TransDepart">
+              <br>
+              Arrival Location:<br>
+              <input type="text" id='TransArrival' name="TransArrival">
               <br>
               <br>
               Enter Departure Time and Date<br>

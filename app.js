@@ -170,12 +170,13 @@ function submit() {
     var start = document.getElementById('start').value;
     var end = document.getElementById('end').value;
     var description = document.getElementById('description').value;
+    var location = document.getElementById('location').value;
     end = end.concat(":00-06:00");
     start = start.concat(":00-06:00");
     gapi.client.load('Calendar', 'v3', function(){
         var event = {
             'summary': summary,
-            'location': '800 Howard St., San Francisco, CA 94103',
+            'location': location,
             'description': description, 
             'start': {
                 'dateTime': start,
@@ -248,10 +249,13 @@ function flight_submit() {
 function transportation_submit() {
     var from = document.getElementById('TransDepart').value;
     var to   = document.getElementById('TransArrival').value;
+    var mode = document.getElementById('TransMode').value;
     var startTime = document.getElementById('TransDepartureTime').value;
     var endTime   = document.getElementById('TransArrivalTime').value;
     var summary = from.concat(" to ");
     summary = summary.concat(to);
+    summary = summary.concat(' by ');
+    summary = summary.concat(mode);
     endTime = endTime.concat(":00-06:00");
     startTime = startTime.concat(":00-06:00");
     gapi.client.load('Calendar', 'v3', function(){
@@ -336,6 +340,6 @@ window.onload=function(){
     document.getElementById('submit').addEventListener('click', submit);
     document.getElementById('flight_submit').addEventListener('click', flight_submit);
     document.getElementById('accom_submit').addEventListener('click', accom_submit);
-    document.getElementById('cal_submit').addEventListener('click', cal_submit);
+    document.getElementById('transportation_submit').addEventListener('click', transportation_submit);
 }
 $(document).ready(main);
