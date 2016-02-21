@@ -18,7 +18,8 @@ function checkAuth() {
 /**
  * Handle response from authorization server.
  *
- * @param {Object} authResult Authorization result.
+ * @param
+  {Object} authResult Authorization result.
  */
 function handleAuthResult(authResult) {
     var authorizeDiv = document.getElementById('authorize-div');
@@ -74,19 +75,14 @@ var main = function() {
   $('.post-btn').click(function() {
     var post = $('.status-box').val();
     $('<li>').text(post).prependTo('.posts');
+    console.log(post);
     $('.status-box').val('');
-    $('.counter').text('140');
   });
   
   $('.status-box').keyup(function() {
     var postLength = $(this).val().length;
     var charactersLeft = 140 - postLength;
     $('.counter').text(charactersLeft);
-  });
-
-  $('.remove-btn').click(function() {
-    var list = document.getElementById(".posts");   // Get the <ul> element with id="myList"
-    list.removeChild(list.childNodes[0]);           // Remove <ul>'s first child node (index 0)
   });
 };
 
