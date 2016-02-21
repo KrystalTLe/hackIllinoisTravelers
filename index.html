@@ -83,16 +83,17 @@ function loadCalendarApi() {
                   <div id="modal1" class="Tabs-info">
                     <form>
                       Departure location:<br>
-                      <input type="text" name="departureLocation">
+                      <input type="text" id='departureLocation'  name="departureLocation">
                       <br>
                       Time of Departure:<br>
-                      <input type="datetime-local" name="departureTime">
+                      <input type="datetime-local" id='departureTime' name="departureTime">
                       <br>
                       Arrival Location:<br>
-                      <input type="text" name="arrivalLocation">
+                      <input type="text" id='arrivalLocation' name="arrivalLocation">
                       <br>
                       Time of Arrival:<br>
-                      <input type="datetime-local" name="arrivalTime"> 
+                      <input type="datetime-local" id='arrivalTime' name="arrivalTime"> 
+                      <input type="button" id='flight_submit' value="Add to Calendar">
                     </form>
                   </div>
             </details>      

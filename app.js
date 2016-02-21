@@ -142,6 +142,49 @@ function submit() {
     });
 }
 
+function flight_submit() {
+    var from = document.getElementById('departureLocation').value;
+    var to   = document.getElementById('arrivalLocation').value;
+    var startTime = document.getElementById('departureTime').value;
+    var endTime   = document.getElementById('arrivalTime').value;
+    var summary = from.concat(" to ");
+    summary = summary.concat(to);
+    endTime = endTime.concat(":00-06:00");
+    startTime = startTime.concat(":00-06:00");
+    gapi.client.load('Calendar', 'v3', function(){
+        var event = {
+            'summary': summary,
+            'location': from,
+            'description': 'flight from '.concat(summary), 
+            'start': {
+                'dateTime': startTime,
+                'timeZone': 'America/Los_Angeles'
+            },
+            'end': {
+                'dateTime': endTime,
+                'timeZone': 'America/Los_Angeles'
+            },
+            'reminders': {
+                'useDefault': false,
+                'overrides': [
+                {'method': 'email', 'minutes': 24 * 60},
+                {'method': 'popup', 'minutes': 10}
+                ]
+            }
+        };
+        var request = gapi.client.calendar.events.insert({
+            'calendarId': '7vgvgacpu311n50qdadt1il8r8@group.calendar.google.com',
+            'resource': event
+        });
+        request.execute(function(event) {
+            console.log('Event created: ' + event.htmlLink);
+
+        });
+    });
+}
+
+
+
 function cal_submit(){
     console.log('test');
     var start = document.getElementById('cal_start').value;
@@ -152,6 +195,7 @@ function cal_submit(){
 
 window.onload=function(){
     document.getElementById('submit').addEventListener('click', submit);
+    document.getElementById('flight_submit').addEventListener('click', flight_submit);
     document.getElementById('cal_submit').addEventListener('click', cal_submit);
 }
 $(document).ready(main);
