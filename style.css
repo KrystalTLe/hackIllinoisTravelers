@@ -2,7 +2,6 @@
 body {
   left: 0;
   margin: 0;
-  overflow: hidden;
   position: relative;
 }
 
@@ -97,4 +96,8 @@ body {
   margin-bottom: 10px;
   word-wrap: break-word;
   min-height: 42px;
+}
+
+.Tabs-info {
+  color: #fff;
 }
