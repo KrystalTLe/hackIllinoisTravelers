@@ -102,9 +102,55 @@
             </button>
           </div>
           <div class='row'>
+<<<<<<< HEAD
             <div class='col-sm-6'>
               <div id = "main">
                 <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+=======
+              <div class='col-sm-6'>
+                  <div id = "main">
+                      <iframe src="https://calendar.google.com/calendar/embed?src=7vgvgacpu311n50qdadt1il8r8%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                  </div>
+              </div>
+              <div class='col-sm-6'>
+                  <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="summary">Event Name:</label>
+                          <div class="col-sm-5">
+                              <input type="text" class="form-control" id="summary" placeholder="Enter event name">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="description">Description:</label>
+                          <div class="col-sm-5">
+                              <input type="text" class="form-control" id="description" placeholder="Enter a description">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="location">Location:</label>
+                          <div class="col-sm-5">
+                              <input type="text" class="form-control" id="location" placeholder="Enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="start">Start:</label>
+                          <div class="col-sm-5">
+                              <input type="datetime-local" class="form-control" id="start">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="end">End:</label>
+                          <div class="col-sm-5">
+                              <input type="datetime-local" class="form-control" id="end">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                              <button type="button" class="btn btn-default" id = "submit">Submit</button>
+                          </div>
+                      </div>
+                  </form>
+>>>>>>> 07cbf1f746e045af372cbacbd95440e8453272ad
               </div>
             </div>
             <div class='col-sm-6'>
@@ -148,27 +194,47 @@
             <i class="fa fa-bars"></i>
             Menu
           </div>
-          <form>
-            Departure location:<br>
-            <input type="text" id='departureLocation'  name="departureLocation">
-            <br>
-            Time of Departure:<br>
-            <input type="datetime-local" id='departureTime' name="departureTime">
-            <br>
-            Arrival Location:<br>
-            <input type="text" id='arrivalLocation' name="arrivalLocation">
-            <br>
-            Time of Arrival:<br>
-            <input type="datetime-local" id='arrivalTime' name="arrivalTime">
-            <input type="button" id='flight_submit' value="Add to Calendar">
-          </form>
-        </div>
+<<<<<<< HEAD
+          <form class="form-horizontal" role='form'>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='departureLocation'>Departure location:</label>
+                  <div class='col-sm-5'>
+                      <input type="text" class='form-control' id='departureLocation'  name="departureLocation">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='departuretime'>Time of departure:</label>
+                  <div class='col-sm-5'>
+                      <input type="datetime-local" class='form-control' id='departureTime' name="departureTime">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='arrivalLocation'>Arrival location:</label>
+                  <div class='col-sm-5'>
+                      <input type="text" class='form-control' id='arrivalLocation' name="arrivalLocation">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <label class="control-label col-sm-2" for='arrivalTime'>Time of arrival:</label>
+                  <div class='col-sm-5'>
+                      <input type="datetime-local" class='form-control' id='arrivalTime' name="arrivalTime">
+                  </div>
+              </div>
+              <div class='form-group'>
+                  <div class='col-sm-offset-2 col-sm-10'>
+                      <button type="button" id='flight_submit' value="Add to Calendar">Add to Calendar</button>
+                  </div>
+              </div>
+            </form>
+          </div>
+
         <!-- Transportation Jumbotron -->
         <div class="jumbotron" id="Transportation">
           <div class="icon-menu">
             <i class="fa fa-bars"></i>
             Menu
           </div>
+<<<<<<< HEAD
           <form id="TransportationChoice">
             Select Mode of Transportation
             <select>
@@ -186,6 +252,30 @@
             <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
             <input type="button" id='transportation_submit' value="Add to Calendar">
           </form>
+=======
+            <form id="TransportationChoice">
+              Select Mode of Transportation
+              <select id='TransMode'>
+                <option value="Car">Car</option>
+                <option value="Bus">Bus</option>
+                <option value="Train">Train</option>
+              </select>
+              Departure location:<br>
+              <input type="text" id='TransDepart'  name="TransDepart">
+              <br>
+              Arrival Location:<br>
+              <input type="text" id='TransArrival' name="TransArrival">
+              <br>
+              <br>
+              Enter Departure Time and Date<br>
+              <input type="datetime-local" id="TransDepartureTime" name="TransDeparture">
+              <br>
+              <br>
+              Enter Arrival Time and Date<br>
+              <input type="datetime-local" id="TransArrivalTime" name="TransArrival">
+              <input type="button" id='transportation_submit' value="Add to Calendar">
+            </form>
+>>>>>>> 07cbf1f746e045af372cbacbd95440e8453272ad
         </div>
         <!-- Accomodation Jumbotron -->
         <div class="jumbotron" id="accomodation">
