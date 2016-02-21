@@ -108,7 +108,6 @@ function submit() {
     var start = document.getElementById('start').value;
     var end = document.getElementById('end').value;
     var description = document.getElementById('description').value;
-    console.log(end);
     end = end.concat(":00-06:00");
     start = start.concat(":00-06:00");
     gapi.client.load('Calendar', 'v3', function(){
@@ -140,11 +139,19 @@ function submit() {
             console.log('Event created: ' + event.htmlLink);
 
         });
-        console.log('thets');
     });
 }
 
-$(document).ready(main);
+function cal_submit(){
+    console.log('test');
+    var start = document.getElementById('cal_start').value;
+    var end = document.getElementById('cal_end').value;
+    console.log(start);
+}
+
+
 window.onload=function(){
     document.getElementById('submit').addEventListener('click', submit);
+    document.getElementById('cal_submit').addEventListener('click', cal_submit);
 }
+$(document).ready(main);
